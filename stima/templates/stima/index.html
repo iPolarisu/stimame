@@ -19,26 +19,15 @@
       <!-- Search bar -->
       <div class="w3-bar w3-black w3-xlarge">
 
-        <input type="text" size="44" class="w3-bar-item w3-input" placeholder="🔍 Ingresa el nombre del juego">
-        
-        <!-- Stima -->
-        <div class="w3-dropdown-hover">
-          
-          <button class="w3-button w3-gray">Stima</button>
+        <form method=POST action="{% url 'stima-score' %}">
+          {% csrf_token %}
+          <input type="text" size="44" class="w3-bar-item w3-input" placeholder="🔍 Ingresa el nombre del juego" name="score">
+          <button class="w3-button w3-gray" type="submit">Stima</button>
+        </form>
 
-          <!-- Search options -->
-          <div class="w3-dropdown-content w3-bar-block w3-card-4">
-            
-            <a href="https://stimame.herokuapp.com/stima-score/" class="w3-bar-item w3-button">Score</a>
-            
-            <a href="https://stimame.herokuapp.com/stima-tarro/" class="w3-bar-item w3-button">Tarro</a>
-            
-            <a href="https://stimame.herokuapp.com/stima-cash/"class="w3-bar-item w3-button">Cash</a>
-
-          </div> 
-        </div>
       </div>
     </div>
+
 
   </header>
   
