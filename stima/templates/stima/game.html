@@ -14,7 +14,7 @@
     .game {  
     background-position: center;
     background-size: cover;
-    background-image: url("{{ media.background }}");
+    background-image: url("{{ game.background }}");
     min-height: 100%;
     }
 
@@ -27,11 +27,11 @@
 {% endblock %}
 
 {% block gameImage %}
-<img class="w3-round" src="{{media.header_image}}" width="100%">
+<img class="w3-round" src="{{game.header_image}}" width="100%">
 {% endblock %}
 
 {% block gameDesc %}
-{{description.short_description}}
+{{game.short_description}}
 {% endblock %}
 
 <!-- Game Stats -->
@@ -104,23 +104,23 @@
 <!-- Requirements -->
 
 {% block minimum %}
-{{ requirements.minimum }}
+{{ game.minimum }}
 {% endblock %}
 
 {% block recommended %}
-{{ requirements.recommended }}
+{{ game.recommended }}
 {% endblock %}
 
 <!-- Support -->
 
 {% block website %}
-{{ support.website }}
+{{ game.website }}
 {% endblock %}
 
 {% block support %}
-{{ support.support_url }}
+{{ game.support_url }}
 {% endblock %}
 
 {% block email %}
-{{ support.support_email }}
+{{ game.support_email }}
 {% endblock %}

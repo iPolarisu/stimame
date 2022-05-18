@@ -19,16 +19,8 @@ def stimaCash(request):
 
 def game(request, id):
     game = Steamapp.objects.get(appid=id)
-    media = Steamapp.objects.get(steamapp_id=id)
-    description = Steamapp.objects.get(steamapp_id=id)
-    requirements = Steamapp.objects.get(steamapp_id=id)
-    support = Steamapp.objects.filter(steamapp_id=id).first()
     context = {
         "game": game,
-        "media": media,
-        "description": description,
-        "requirements": requirements,
-        "support": support
     }
     return render(request, 'stima/game.html', context)
 
