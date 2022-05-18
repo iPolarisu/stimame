@@ -25,23 +25,24 @@
 
 <!-- Table rows -->
 {% block tableRows %}
-  {% if score %}
-  <tr class="w3-large">
-    <td>id</td>
-    <td><img src="https://steamcdn-a.akamaihd.net/steam/apps/10/header.jpg?t=1528733245" height=64.5 width=138></img></td>
-    <td><a href="https://stimame.herokuapp.com/10">{{score}}</a></td>
-    <td>Genres</td>
-    <td>Cat</td>
-    <td>Dev</td>
-    <td class="w3-center">Date</td>
-    <td class="w3-center">%</td>
-    <td class="w3-center">Hrs</td>
-    <td class="w3-center">N</td>
-    <td class="w3-center">$$$</td>
-    <td class="w3-gray w3-center">(Precio/TiempoMedio)*Pos.Rev</td>
-  </tr>
+  {% if games %}
+    {% for game in games %}
+    <tr class="w3-large">
+      <td>id</td>
+      <td><img src={{ game.header }} height=64.5 width=138></img></td>
+      <td><a href="https://stimame.herokuapp.com/game/{{ game.id }}">{{ game.name }}</a></td>
+      <td>Genres</td>
+      <td>Cat</td>
+      <td>Dev</td>
+      <td class="w3-center">Date</td>
+      <td class="w3-center">%</td>
+      <td class="w3-center">Hrs</td>
+      <td class="w3-center">N</td>
+      <td class="w3-center">$$$</td>
+      <td class="w3-gray w3-center">(Precio/TiempoMedio)*Pos.Rev</td>
+    </tr>
   {% else %}
-  <p>no buscaste nada</p>
+  <p>no buscaste nada / no se encontró nada</p>
   {% endif %}
 {% endblock %}
 
