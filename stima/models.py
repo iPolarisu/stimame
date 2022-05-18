@@ -50,4 +50,4 @@ class Steamapp(models.Model):
     
     class Meta:
         managed = False
-        db_table = 'steamapp'
+        db_table = 'steam'
