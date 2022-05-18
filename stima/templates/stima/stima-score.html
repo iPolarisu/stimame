@@ -28,7 +28,7 @@
     <tr class="w3-large">
       <td class="w3-center">{{ game.appid }}</td>
       <td><img src={{ game.header_image }} height=64.5 width=138></img></td>
-      <td><a href="{% url 'stima-score' game.appid %}">{{ game.name }}</a></td>
+      <td><a href="{% url 'game' game.appid %}">{{ game.name }}</a></td>
       <td class="w3-center">{{ game.developer }}</td>
       <td class="w3-center">{{ game.release_date }}</td>
       <td class="w3-center">{{ game.ratingStr }}%</td>
