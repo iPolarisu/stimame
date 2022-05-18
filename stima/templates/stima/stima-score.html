@@ -10,8 +10,6 @@
       <th>ID</th>
       <th></th>
       <th></th>
-      <th>Géneros</th>
-      <th>Categorías</th>
       <th>Developer</th>
       <th class="w3-center">Salida</th>
       <th class="w3-center">%Pos.Rev.</th>
@@ -28,18 +26,16 @@
   {% if games %}
     {% for game in games %}
     <tr class="w3-large">
-      <td>id</td>
-      <td><img src={{ game.header }} height=64.5 width=138></img></td>
-      <td><a href="https://stimame.herokuapp.com/game/{{ game.id }}">{{ game.name }}</a></td>
-      <td>Genres</td>
-      <td>Cat</td>
-      <td>Dev</td>
-      <td class="w3-center">Date</td>
-      <td class="w3-center">%</td>
-      <td class="w3-center">Hrs</td>
-      <td class="w3-center">N</td>
-      <td class="w3-center">$$$</td>
-      <td class="w3-gray w3-center">(Precio/TiempoMedio)*Pos.Rev</td>
+      <td class="w3-center">{{ game.appid }}</td>
+      <td><img src={{ game.header_image }} height=64.5 width=138></img></td>
+      <td><a href="{% url 'stima-score' game.appid %}">{{ game.name }}</a></td>
+      <td class="w3-center">{{ game.developer }}</td>
+      <td class="w3-center">{{ game.release_date }}</td>
+      <td class="w3-center">{{ game.ratingStr }}%</td>
+      <td class="w3-center">{{ game.medianHours }}</td>
+      <td class="w3-center">{{ game.owners }}</td>
+      <td class="w3-center">{{ game.price }}</td>
+      <td class="w3-gray w3-center">{{ game.stimaScore }}</td>
     </tr>
     {% endfor %}
   {% else %}
