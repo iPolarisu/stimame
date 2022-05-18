@@ -53,18 +53,15 @@
 
         <!-- Search bar -->
         <div class="w3-bar w3-black w3-xlarge">
-          <input type="text" size="40" class="w3-bar-item w3-input" placeholder="Escribe el juego a stimar">
-          <div class="w3-dropdown-hover">
-            <button class="w3-button w3-gray">Stima</button>
 
-            <!-- Search options -->
-            <div class="w3-dropdown-content w3-bar-block w3-card-4">
-              
-              <a href="https://stimame.herokuapp.com/stima-score/" class="w3-bar-item w3-button">STIMA</a>
+          <form method=POST action="{% url 'stima-score' %}">
+            {% csrf_token %}
+            <input type="text" size="44" class="w3-bar-item w3-input" placeholder="🔍 Ingresa el nombre del juego" name="score">
+            <button class="w3-button w3-gray" type="submit">Stima</button>
+          </form>
 
-            </div> 
-          </div>
         </div>
+        
       </div>
 
       <table class="w3-table-all w3-center w3-row-padding w3-hoverable">
