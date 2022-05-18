@@ -9,13 +9,11 @@ def index(request):
     return render(request, 'stima/index.html')
 
 def stimaScore(request):
-    return render(request, 'stima/stima-score.html')
-
-def stimaTarro(request):
-    return render(request, 'stima/stima-tarro.html')
-
-def stimaCash(request):
-    return render(request, 'stima/stima-cash.html')
+    if request.method == "POST":
+        score = request.POST['score']
+        return render(request, 'stima/stima-score.html', {'score':score})
+    else:
+        return render(request, 'stima/stima-score.html')
 
 def game(request, id):
     game = Steamapp.objects.get(appid=id)
