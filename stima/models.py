@@ -21,7 +21,33 @@ class Steamapp(models.Model):
     background = models.TextField(max_length=255, blank=True, null=True)
     detailed_description = models.TextField(max_length=100000, blank=True, null=True)
     about_the_game = models.TextField(max_length=100000, blank=True, null=True)
+    
+    def averageHours(self):
+        return round(self.average_playtime/60, 1)
 
+    def medianHours(self):
+        return round(self.median_playtime/60, 1)
+    
+    def priceStr(self):
+        if self.price == 0:
+            return "0 - F2P"
+        else:
+            return self.price
+
+    def rating(self):
+        return round(self.positive_ratings/(self.positive_ratings + self.negative_ratings), 2)
+
+    def ratingStr(self):
+        return int(self.rating()*100)
+    
+    def stimaScore(self):
+        rating = self.rating()
+        price = self.price
+        if price == 0:
+            return round((self.averageHours())*rating, 2)
+        else:
+            return round((self.averageHours()/self.price)*rating, 2)
+    
     class Meta:
         managed = False
-        db_table = 'steam'
+        db_table = 'steamapp'
