@@ -1,0 +1,247 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'stima/styles/styles.css' %}">
+        <title>{% block title %} STIMA.ME - GameName {% endblock %}</title>
+        {% block styleGame %} style {% endblock %}
+    </head>
+
+    <body>
+        <!-- Navigation -->
+        <div class="w3-top">
+            <div class="w3-bar w3-black w3-card w3-xlarge w3-border-white w3-bottombar" id="myNavbar">
+            
+            <!-- Stimame logo -->
+            <a href="http://grupo02.cc3201.dcc.uchile.cl/#home" class="w3-bar-item w3-button w3-wide">STIMA.ME</a>
+            
+            <!-- Right links -->
+            <div class="w3-right w3-mobile">
+                <a href="http://grupo02.cc3201.dcc.uchile.cl/#nani" class="w3-bar-item w3-button">Nani!?</a>
+                <a href="http://grupo02.cc3201.dcc.uchile.cl/#steamdex" class="w3-bar-item w3-button">SteamDex</a>
+                <a href="http://grupo02.cc3201.dcc.uchile.cl/#team" class="w3-bar-item w3-button">Team</a>
+            </div>
+            </div>
+        </div>
+
+        <!-- Game Showcase -->
+        <header class="game w3-display-container w3-grayscale-min w3-border-black w3-bottombar" id="home">
+            
+            
+            <!-- Game Header -->
+            <div class="w3-text-white" style="padding: 120px">
+            
+            <h1 class="">{% block gameTitle %} GameTitle {% endblock %}</h1>
+
+            <div class="w3-panel">
+                <div class="w3-row-padding" style="margin:0 -16px">
+                
+                <div class="w3-third">
+                    {% block gameImage %}
+                    {% endblock %}
+                    <p class="w3-justify w3-large">
+                        {% block gameDesc %}
+                    Play the world's number 1 online action game. Engage in an incredibly realistic brand of terrorist warfare in this wildly popular team-based game. Ally with teammates to complete strategic missions. Take out enemy sites. Rescue hostages. Your role affects your team's success. Your team's success affects your role.
+                    {% endblock %}
+                    </p>
+                    
+                </div>
+
+                <!-- Stats -->
+                <div class="w3-twothird">
+
+                    <!-- StimaScore Rating Price -->
+                    <div class="w3-row-padding w3-margin-bottom">
+                    <div class="w3-third">
+                        <div class="w3-container w3-black w3-padding-16">
+                        <div class="w3-left"><i class="fa fa-star w3-xxxlarge"></i></div>
+                        <div class="w3-right">
+                            <h3 class="w3-text-amber">{% block stimaScore %} StimaScore {% endblock %}</h3>
+                        </div>
+                        <div class="w3-clear"></div>
+                        <h4>StimaScore</h4>
+                        </div>
+                    </div>
+                    <div class="w3-third">
+                        <div class="w3-container w3-black w3-padding-16">
+                        <div class="w3-left"><i class="fa fa-thumbs-up w3-xxxlarge"></i></div>
+                        <div class="w3-right">
+                            <h3>{% block rating %} rating {% endblock %}</h3>
+                        </div>
+                        <div class="w3-clear"></div>
+                        <h4>Rating</h4>
+                        </div>
+                    </div>
+                    <div class="w3-third">
+                        <div class="w3-container w3-black w3-padding-16">
+                        <div class="w3-left"><i class="fa fa-usd w3-xxxlarge"></i></div>
+                        <div class="w3-right">
+                            <h3>{% block price %} price {% endblock %}</h3>
+                        </div>
+                        <div class="w3-clear"></div>
+                        <h4>Price</h4>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Owners Average Median -->
+                    <div class="w3-row-padding w3-margin-bottom">
+                    <div class="w3-third">
+                        <div class="w3-container w3-black w3-padding-16">
+                        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+                        <div class="w3-right">
+                            <h3>{% block owners %} owners {% endblock %}</h3>
+                        </div>
+                        <div class="w3-clear"></div>
+                        <h4>Owners</h4>
+                        </div>
+                    </div>
+                    <div class="w3-third">
+                        <div class="w3-container w3-black w3-padding-16">
+                        <div class="w3-left"><i class="fa fa-hourglass-half w3-xxxlarge"></i></div>
+                        <div class="w3-right">
+                            <h3>{% block average %} average {% endblock %}</h3>
+                        </div>
+                        <div class="w3-clear"></div>
+                        <h4>AveragePlayTime</h4>
+                        </div>
+                    </div>
+                    <div class="w3-third">
+                        <div class="w3-container w3-black w3-padding-16">
+                        <div class="w3-left"><i class="fa fa-hourglass-end w3-xxxlarge"></i></div>
+                        <div class="w3-right">
+                            <h3>{% block median %} median {% endblock %}</h3>
+                        </div>
+                        <div class="w3-clear"></div>
+                        <h4>MedianPlaytime</h4>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Achievements Age Release -->
+                    <div class="w3-row-padding w3-margin-bottom">
+                    <div class="w3-third">
+                        <div class="w3-container w3-black w3-padding-16">
+                        <div class="w3-left"><i class="fa fa-trophy w3-xxxlarge"></i></div>
+                        <div class="w3-right">
+                            <h3>{% block achievements %} achievements {% endblock %}</h3>
+                        </div>
+                        <div class="w3-clear"></div>
+                        <h4>Achievements</h4>
+                        </div>
+                    </div>
+                    <div class="w3-third">
+                        <div class="w3-container w3-black w3-padding-16">
+                        <div class="w3-left"><i class="fa fa-ban w3-xxxlarge"></i></div>
+                        <div class="w3-right">
+                            <h3>{% block age %} age {% endblock %}</h3>
+                        </div>
+                        <div class="w3-clear"></div>
+                        <h4>Age</h4>
+                        </div>
+                    </div>
+                    <div class="w3-third">
+                        <div class="w3-container w3-black w3-padding-16">
+                        <div class="w3-left"><i class="fa fa-calendar w3-xxxlarge"></i></div>
+                        <div class="w3-right">
+                            <h3>{% block release %} release {% endblock %}</h3>
+                        </div>
+                        <div class="w3-clear"></div>
+                        <h4>Release</h4>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+                </div>
+                <hr>
+                
+                    
+
+                <div class="w3-container w3-third">
+
+                    <h3> Extra info. </h3>
+
+                    <table class="w3-table w3-black w3-bordered w3-border">
+                    <tr>
+                        <td>ID</td>
+                        <td>{% block id %} id {% endblock %}</td>
+                    </tr>
+                    <tr>
+                        <td>Genres</td>
+                        <td>{% block genres %} genres {% endblock %}</td>
+                    </tr>
+                    <tr>
+                        <td>Categories</td>
+                        <td>{% block categories %} categories {% endblock %}</td>
+                    </tr>
+                    <tr>
+                        <td>Positive ratings</td>
+                        <td class="w3-text-green">{% block positive %} positive {% endblock %}</td>
+                    </tr>
+                    <tr>
+                        <td>Negative ratings</td>
+                        <td class="w3-text-red">{% block negative %} negative {% endblock %}</td>
+                    </tr>
+                    <tr>
+                        <td>Developers</td>
+                        <td>{% block developers %} developers {% endblock %}</td>
+                    </tr>
+
+                    </table><br>
+                </div>
+
+                <div class="w3-container w3-third">
+
+                    <h3> Requirements </h3>
+
+                    <table class="w3-table w3-black w3-bordered w3-border">
+                    <tr>
+                        <td>Minimum</td>
+                        <td>{% block minimum %} minimum {% endblock %}</td>
+                    </tr>
+                    <tr>
+                        <td>Recommended</td>
+                        <td>{% block recommended %} recommended {% endblock %}</td>
+                    </tr>
+                    </table><br>
+                </div>
+
+                <div class="w3-container w3-third">
+
+                    <h3> Support </h3>
+
+                    <table class="w3-table w3-black w3-bordered w3-border">
+                    <tr>
+                        <td>Website</td>
+                        <td>{% block website %} website {% endblock %}</td>
+                    </tr>
+                    <tr>
+                        <td>Support</td>
+                        <td>{% block support %} support {% endblock %}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>{% block email %} email {% endblock %}</td>
+                    </tr>
+                    </table><br>
+                </div>
+
+
+        </header>
+
+        <!-- Footer -->
+        <footer class="w3-center w3-black w3-padding-64">
+        
+            <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>STIMA.ME</a>
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a> and <a href="https://www.djangoproject.com/" title="djangoproject" target="_blank" class="w3-hover-text-green"> Django </a></p>
+        
+        </footer>
+
+    </body>
+</html>

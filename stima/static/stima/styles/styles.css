@@ -1,0 +1,21 @@
+.showcase {  
+background-position: center;
+background-size: cover;
+background-image: url("../img/games.webp");
+min-height: 100%;
+}
+
+
+.td {
+    vertical-align: middle;
+}
+
+.header {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+.input,textarea{
+    width:100%;display:block
+}

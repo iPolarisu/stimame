@@ -1,0 +1,42 @@
+{% extends 'stima/base/search.html' %}
+{% load static %}
+  
+{% block title %} STIMA.ME - StimaScore {% endblock %}
+
+<!-- Table headers -->
+{% block tableHeaders %}
+  <thead>
+    <tr class="w3-black w3-large">
+      <th>ID</th>
+      <th></th>
+      <th></th>
+      <th>Géneros</th>
+      <th>Categorías</th>
+      <th>Developer</th>
+      <th class="w3-center">Salida</th>
+      <th class="w3-center">%Pos.Rev.</th>
+      <th class="w3-center">TiempoMedio</th>
+      <th class="w3-center">Jugadores</th>
+      <th class="w3-center">Precio</th>
+      <th class="w3-dark-grey w3-center">StimaScore</th>
+    </tr>
+  </thead>
+{% endblock %}
+
+<!-- Table rows -->
+{% block tableRows %}
+  <tr class="w3-large">
+    <td>id</td>
+    <td><img src="https://steamcdn-a.akamaihd.net/steam/apps/10/header.jpg?t=1528733245" height=64.5 width=138></img></td>
+    <td><a href="http://grupo02.cc3201.dcc.uchile.cl/game/">Counter-Strike</a></td>
+    <td>Genres</td>
+    <td>Cat</td>
+    <td>Dev</td>
+    <td class="w3-center">Date</td>
+    <td class="w3-center">%</td>
+    <td class="w3-center">Hrs</td>
+    <td class="w3-center">N</td>
+    <td class="w3-center">$$$</td>
+    <td class="w3-gray w3-center">(Precio/TiempoMedio)*Pos.Rev</td>
+  </tr>
+{% endblock %}
