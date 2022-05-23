@@ -12,6 +12,7 @@ def stimaScore(request):
     if request.method == "POST":
         score = request.POST['score']
         games = Steamapp.objects.filter(name__unaccent__icontains=score)
+        games.order_by('stimaScore')
         return render(request, 'stima/stima-score.html', {'games':games})
     else:
         return render(request, 'stima/stima-score.html')
