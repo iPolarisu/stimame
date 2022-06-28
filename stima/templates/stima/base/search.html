@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'stima/styles/styles.css' %}">
+  <title>{% block title %} STIMA.ME - SearchType {% endblock %}</title>
+  <style>
+  body,h1,h2,h3,h4,h5,h6 {font-family: Oswald, serif;}
+
+  body, html {
+  height: 100%;
+  line-height: 1.8;
+  }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <div class="w3-top">
+    
+    <div class="w3-bar w3-black w3-card w3-xlarge w3-border-white w3-bottombar" id="myNavbar">
+      
+      <!-- Stimame logo -->
+      <a href="https://stimame.herokuapp.com/#home" class="w3-bar-item w3-button w3-wide">STIMA.ME</a>
+      
+      <!-- Right links -->
+      <div class="w3-right w3-mobile">
+        <a href="https://stimame.herokuapp.com/#nani" class="w3-bar-item w3-button">Nani!?</a>
+        <a href="https://stimame.herokuapp.com/#stima-score" class="w3-bar-item w3-button">StimaScore</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table example -->
+  <div class="w3-container" style="padding:10% 10%" id="query">
+
+    <div class="w3-center">
+      
+      <div class="w3-card w3-black w3-border-white w3-rightbar w3-leftbar w3-topbar w3-bottombar">
+            
+        <div class="header w3-center">
+
+          <img class="w3-image" width="16%" height="16%" src="{% static 'stima/img/stimameIcon.png' %}">
+          <h1 class="w3-xxxlarge w3-text-white">STIMA.ME</h1>
+          
+        </div>
+
+        <!-- Search bar -->
+        <div class="w3-bar w3-black w3-xlarge">
+
+          <form method=POST action="{% url 'stima-score' %}">
+            {% csrf_token %}
+            <input type="text" size="44" class="w3-bar-item w3-input" placeholder="🔍 Ingresa el nombre del juego" name="score">
+            <button class="w3-button w3-gray" type="submit">Stima</button>
+          </form>
+
+        </div>
+        
+      </div>
+
+      <table class="w3-table-all w3-center w3-row-padding w3-hoverable">
+
+        {% block tableHeaders %} {% endblock %}
+        {% block tableRows %} {% endblock %}
+
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-64">
+    <a href="#query" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>STIMA.ME</a>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a> and <a href="https://www.djangoproject.com/" title="djangoproject" target="_blank" class="w3-hover-text-green"> Django </a></p>
+  </footer>
+</body>
+</html>

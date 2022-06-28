@@ -1,0 +1,51 @@
+{% extends 'stima/base/base.html' %}
+{% load static %}
+  
+{% block title %} STIMA.ME {% endblock %}
+
+{% block body %}
+  <!-- Showcase -->
+  <header class="showcase w3-display-container w3-grayscale-min w3-border-black w3-bottombar" id="home">
+      
+    <div class="w3-display-middle w3-card w3-black w3-border-white w3-rightbar w3-leftbar w3-topbar w3-bottombar">
+      
+      <div class="header w3-center">
+
+        <img class="w3-image" width="16%" height="16%" src="{% static 'stima/img/stimameIcon.png' %}">
+        <h1 class="w3-xxxlarge w3-text-white">STIMA.ME</h1>
+        
+      </div>
+
+      <!-- Search bar -->
+      <div class="w3-bar w3-black w3-xlarge">
+
+        <form method=POST action="{% url 'stima-score' %}">
+          {% csrf_token %}
+          <input type="text" size="44" class="w3-bar-item w3-input" placeholder="🔍 Ingresa el nombre del juego" name="score">
+          <button class="w3-button w3-gray" type="submit">Stima</button>
+        </form>
+
+      </div>
+    </div>
+
+
+  </header>
+  
+  <!-- Nani section -->
+  <div class="w3-container" style="padding:128px 16px" id="nani">
+    <div class="w3-row-padding w3-center">
+      <div class="w3-card w3-third">
+        
+        <h2 class="w3-xxlarge">Nani!?</h2>
+        <i class="fa fa-question-circle w3-margin-bottom w3-jumbo w3-center"></i>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      </div>
+      <div class="w3-twothird">
+        <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large">Passion</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

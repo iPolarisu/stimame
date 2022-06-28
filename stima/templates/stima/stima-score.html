@@ -1,0 +1,49 @@
+{% extends 'stima/base/search.html' %}
+{% load static %}
+  
+{% block title %} STIMA.ME - StimaScore {% endblock %}
+
+<!-- Table headers -->
+{% block tableHeaders %}
+  <thead>
+    <tr class="w3-black w3-large">
+      <th>ID</th>
+      <th></th>
+      <th></th>
+      <th>Developer</th>
+      <th class="w3-center">Salida</th>
+      <th class="w3-center">%Pos.Rev.</th>
+      <th class="w3-center">TiempoMedio</th>
+      <th class="w3-center">Jugadores</th>
+      <th class="w3-center">Precio</th>
+      <th class="w3-dark-grey w3-center">StimaScore</th>
+    </tr>
+  </thead>
+{% endblock %}
+
+<!-- Table rows -->
+{% block tableRows %}
+  {% if games %}
+    {% for game in games %}
+    <tr class="w3-large">
+      <td class="w3-center">{{ game.appid }}</td>
+      <td><img src={{ game.header_image }} height=64.5 width=138></img></td>
+      <td><a href="{% url 'game' game.appid %}">{{ game.name }}</a></td>
+      <td class="w3-center">{{ game.developer }}</td>
+      <td class="w3-center">{{ game.release_date }}</td>
+      <td class="w3-center">{{ game.ratingStr }}%</td>
+      <td class="w3-center">{{ game.medianHours }}</td>
+      <td class="w3-center">{{ game.owners }}</td>
+      <td class="w3-center">{{ game.price }}</td>
+      <td class="w3-gray w3-center">{{ game.stimaScore }}</td>
+    </tr>
+    {% endfor %}
+  {% else %}
+  <p>no buscaste nada / no se encontró nada</p>
+  {% endif %}
+{% endblock %}
+
+
+
+
+

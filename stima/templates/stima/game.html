@@ -1,0 +1,126 @@
+{% extends 'stima/base/gameBase.html' %}
+
+{% block title %} STIMA.ME - {{ game.name }} {% endblock %}
+
+{% block styleGame %}
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: Oswald, serif;}
+
+    body, html {
+    height: 100%;
+    line-height: 1.8;
+    }
+
+    .game {  
+    background-position: center;
+    background-size: cover;
+    background-image: url("{{ game.background }}");
+    min-height: 100%;
+    }
+
+  </style>
+{% endblock %}
+
+<!-- Game Header -->
+{% block gameTitle %}
+{{ game.name }}
+{% endblock %}
+
+{% block gameImage %}
+<img class="w3-round" src="{{game.header_image}}" width="100%">
+{% endblock %}
+
+{% block gameDesc %}
+{{game.about_the_game}}
+{% endblock %}
+
+<!-- Game Stats -->
+
+  <!-- 1 -->
+    {% block stimaScore %}
+    {{ game.stimaScore }} SS
+    {% endblock %}
+    
+    {% block rating %}
+    {{ game.ratingStr }}%
+    {% endblock %}
+
+    {% block price %}
+    ${{ game.priceStr }}
+    {% endblock %}
+
+  <!-- 2 -->
+    {% block owners %}
+    {{ game.owners }}
+    {% endblock %}
+
+    {% block average %}
+    {{ game.averageHours }}hrs.
+    {% endblock %}hrs.
+
+    {% block median %}
+    {{ game.medianHours }}hrs.
+    {% endblock %}
+
+  <!-- 3 -->
+    {% block achievements %}
+    {{ game.achievements }}
+    {% endblock %}
+
+    {% block age %}
+    {{ game.required_age }}+
+    {% endblock %}
+
+    {% block release %}
+    {{ game.release_date }}
+    {% endblock %}
+
+<!-- Extra info -->
+
+{% block id %}
+{{ game.appid }}
+{% endblock %}
+
+{% block genres %}
+{{ game.genres }}
+{% endblock %}
+
+{% block categories %}
+{{ game.categories }}
+{% endblock %}
+
+{% block positive %}
+{{ game.positive_ratings }}
+{% endblock %}
+
+{% block negative %}
+{{ game.negative_ratings }}
+{% endblock %}
+
+{% block developers %}
+{{ game.developer }}
+{% endblock %}
+
+<!-- Requirements -->
+
+{% block minimum %}
+{{ game.minimum }}
+{% endblock %}
+
+{% block recommended %}
+{{ game.recommended }}
+{% endblock %}
+
+<!-- Support -->
+
+{% block website %}
+{{ game.website }}
+{% endblock %}
+
+{% block support %}
+{{ game.support_url }}
+{% endblock %}
+
+{% block email %}
+{{ game.support_email }}
+{% endblock %}
